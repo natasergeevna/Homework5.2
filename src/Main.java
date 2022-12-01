@@ -9,27 +9,25 @@ public class Main {
         System.out.println("Сумма трат за месяц составила " + sum + " рублей" + "\n");
 
         //task 2
-        int max = -1;
-        int[] arr1 = generateRandomArray();
-        int min = arr1[0];
-        for (int i = 0; i < arr1.length - 1; i++) {
-            if (arr1[i + 1] >= arr1[i]) {
-                max = arr1[i + 1];
+        int max = arr[0];
+        int min = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] >= max) {
+                max = arr[i];
             }
-            if (arr1[i + 1] <= min){
-                min = arr1[i + 1];
+            if (arr[i] <= min){
+                min = arr[i];
             }
         }
         System.out.println("Минимальная сумма трат за день составила " + min + " рублей, максимальная сумма затрат за день составила " + max + " рублей" + "\n");
 
         //task 3
-        int[] arr2 = generateRandomArray();
         int sumArray = 0;
         double averageSum = 0;
-        for (int i = 0; i < arr2.length; i++) {
-            sumArray += arr2[i];
-            averageSum = sumArray / (arr2.length);
+        for (int i = 0; i < arr.length; i++) {
+            sumArray += arr[i];
         }
+        averageSum = sumArray / arr.length;
         System.out.println("Средняя сумма трат за месяц составила " + averageSum + " рублей" + "\n");
 
         //task 4
