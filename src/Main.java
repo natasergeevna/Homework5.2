@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         //task 1
@@ -35,7 +37,47 @@ public class Main {
         for (int i = reverseFullName.length - 1; i >= 0; i--) {
             System.out.print(reverseFullName[i]);
         }
-    }
+        System.out.println();
+
+        //task 5
+        int[] row = new int[3];
+        int[] column = new int[3];
+        for (int i = 0; i < row.length; i++) {
+            for (int i1 = 0; i1 < column.length; i1++) {
+                if ((i == 0 || i == row.length - 1) && (i1 == 0 || i1 == column.length - 1)) System.out.print(1);
+                else if (i == 1 && i1 == 1) System.out.print(1);
+                else System.out.print(0);
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+        //task 6
+        int[] massiv = {5, 4, 3, 2, 1};
+        System.out.println(Arrays.toString(massiv));
+        int[] mas = Arrays.stream(massiv).sorted().toArray();
+        System.out.println(Arrays.toString(mas));
+        System.out.println();
+
+        //task 7
+        int[] arr1 = {5, 8, 2, 3, 9};
+        for (int i = 0; i < arr1.length / 2; i++){
+            int tmp = arr1[i];
+            arr1[i] = arr1[arr1.length - 1 - i];
+            arr1[arr1.length - 1 - i] = tmp;
+        }
+        System.out.println(Arrays.toString(arr1));
+        System.out.println();
+
+        //task 8
+        int[] mas1 = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
+        for (int i = 0; i < mas1.length - 1; i++){
+            for (int j = 1; j < mas1.length; j++){
+                if (mas1[i] + mas1[j] == -2) System.out.println(mas1[i] + " + " + mas1[j] + " = -2");
+            }
+        }
+        System.out.println();
+     }
 
     public static int[] generateRandomArray() {   //генерация массива случайных чисел
         java.util.Random random = new java.util.Random();
